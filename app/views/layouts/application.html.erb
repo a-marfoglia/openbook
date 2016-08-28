@@ -10,7 +10,9 @@
   </head>
   <body>
 	  <%= render 'layouts/header' %>
-    <div class="container">
+    <%= render 'layouts/login_modal' %>
+    <%= render 'layouts/signup_modal' %>
+    <div id="main" class="container">
       <%= render 'shared/flash' %>
       <%= yield %>
     </div>
