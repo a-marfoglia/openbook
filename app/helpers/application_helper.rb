@@ -13,4 +13,9 @@ module ApplicationHelper
     return true if flash[:trigger_modal] == "signup"
     return false
   end
+
+  def triggerLoginModal?()
+    return true if flash[:trigger_modal] == "login"
+    return false
+  end
 end

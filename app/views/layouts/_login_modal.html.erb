@@ -6,13 +6,28 @@
         <h4 class="modal-title" id="loginModalLabel">Accedi</h4>
       </div>
       <div class="modal-body">
-        <p>Wow, super</p>
-        <p>What a beautiful modal</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
-        <button type="button" class="btn btn-primary">Accedi</button>
+        <%= form_for(:session, url: login_path) do |f| %>
+          <%= render 'shared/login_error_messages' %>
+
+          <%= f.hidden_field :forwarding_url, value: request.url if request.get? %>
+
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+          <%= f.submit "Accedi", class: "btn btn-primary" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+<% if triggerLoginModal? %>
+  <script>
+    triggerModal("#loginModal");
+  </script>
+<% end %>
