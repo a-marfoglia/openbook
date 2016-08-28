@@ -8,4 +8,9 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+
+  def triggerSignupModal?()
+    return true if flash[:trigger_modal] == "signup"
+    return false
+  end
 end

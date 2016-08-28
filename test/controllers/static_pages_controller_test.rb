@@ -7,4 +7,9 @@ class StaticPagesControllerTest < ActionController::TestCase
 	assert_select "title", "Home | Openbook"
   end
 
+  test "should get about" do
+    get :about
+    assert_response :success
+  end
+
 end

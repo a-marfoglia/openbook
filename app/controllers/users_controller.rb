@@ -10,10 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Benvenuto su Openbook!"
       redirect_to @user
     else
-      render 'new'
+      flash[:trigger_modal] = "signup"
+      flash[:errors] = @user.errors.full_messages
+      redirect_to forwarding_url || root_path
     end
   end
 
@@ -22,5 +24,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+
+    def forwarding_url
+      params[:user][:forwarding_url]
     end
 end

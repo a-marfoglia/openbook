@@ -1,10 +1,11 @@
-<% if @user && @user.errors.any? %>
+<% error_list = @user && @user.errors.any? ? @user.errors.full_messages : flash[:errors] %>
+<% if error_list && error_list.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
+      The form contains <%= pluralize(error_list.count, "error") %>.
     </div>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% error_list.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
