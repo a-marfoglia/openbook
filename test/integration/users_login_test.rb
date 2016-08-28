@@ -28,5 +28,18 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete_via_redirect logout_path
     assert_template 'static_pages/home'
     assert_not is_logged_in?
+    delete_via_redirect logout_path
+    assert_template 'static_pages/home'
+    assert_not is_logged_in?
+  end
+
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_nil cookies['remember_token']
+  end
+
+  test "login without remembering" do
+    log_in_as(@user, remember_me: '0')
+    assert_nil cookies['remember_token']
   end
 end
