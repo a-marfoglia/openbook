@@ -1,5 +1,6 @@
 <% if msg = flash[:login_error] %>
-<div class="alert alert-danger">
-  <%= msg %>.
-</div>
+  <%= content_tag :div, class: 'alert alert-danger' do %>
+    <%= content_tag :span, nil, class: 'glyphicon glyphicon-exclamation-sign' %>
+    <%= msg %>.
+  <% end %>
 <% end %>

@@ -1,5 +1,5 @@
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -11,20 +11,22 @@
 
           <%= f.hidden_field :forwarding_url, value: request.url if request.get? %>
 
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
+		  <%= content_tag :div, class: 'input-group' do %>
+		    <%= f.email_field :email, class: 'form-control', placeholder: "E-mail" %>
+			<%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon' %>
+		  <% end %>
 
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
+		  <%= content_tag :div, class: 'input-group' do %>
+		    <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+			<%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon' %>
+		  <% end %>
 
           <%= f.label :remember_me, class: "checkbox inline" do %>
             <%= f.check_box :remember_me %>
             <span>Remember me on this computer</span>
           <% end %>
 
-        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
           <%= f.submit "Accedi", class: "btn btn-primary" %>
         </div>
         <% end %>

@@ -1,5 +1,5 @@
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -11,24 +11,28 @@
 
           <%= f.hidden_field :forwarding_url, value: request.url if request.get? %>
 
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
+		  
+          <%= content_tag :div, (f.text_field :name, class: 'form-control', placeholder: "Username")+
+		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-user'), class: 'input-group-addon'),
+			  class: 'input-group' %>
 
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
+          <%= content_tag :div, (f.text_field :email, class: 'form-control', placeholder: "E-mail")+
+		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon'),
+			  class: 'input-group' %>
 
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
+          <%= content_tag :div, (f.text_field :password, class: 'form-control', placeholder: "Password")+
+		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon'),
+			  class: 'input-group' %>
 
-          <%= f.label :password_confirmation, "Confirmation" %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
+		<%= content_tag :div, (f.text_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation")+
+		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-ok'), class: 'input-group-addon'),
+			  class: 'input-group' %>
 
-        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
           <%= f.submit "Registrati", class: "btn btn-primary" %>
         </div>
         <% end %>
+	  </div>
     </div>
   </div>
 </div>
