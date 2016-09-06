@@ -1,0 +1,6 @@
+<% provide(:title, 'Nuovo post') %>
+<%= form_for @micropost do |f| %>
+  <%= f.text_field :title, class: 'form-control', placeholder: "Inserisci il titolo" %>
+  <%= f.text_field :content, class: 'form-control', placeholder: "Inserisci la trama" %>
+  <%= f.submit "Crea", class: 'btn btn-default' %>
+<% end %>
