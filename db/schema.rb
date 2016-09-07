@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906195136) do
+ActiveRecord::Schema.define(version: 20160907122728) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -20,18 +20,26 @@ ActiveRecord::Schema.define(version: 20160906195136) do
   end
 
   create_table "comments", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "micropost_id"
+    t.integer  "user_id"
+    t.text     "content"
   end
+
+  add_index "comments", ["micropost_id"], name: "index_comments_on_micropost_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "microposts", force: true do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
+    t.integer  "category_id"
   end
 
+  add_index "microposts", ["category_id"], name: "index_microposts_on_category_id"
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
