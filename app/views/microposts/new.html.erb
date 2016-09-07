@@ -4,5 +4,6 @@
   <%= f.text_field :title, class: 'form-control', placeholder: "Inserisci il titolo" %>
   <%= f.text_field :content, class: 'form-control', placeholder: "Inserisci la trama" %>
   <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Categoria" %>
+  <%= f.file_field :attachment %>
   <%= f.submit "Crea", class: 'btn btn-default' %>
 <% end %>

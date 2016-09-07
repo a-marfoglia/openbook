@@ -1,2 +1,8 @@
+<%= content_tag :p, "Autore: #{@micropost.user.name}" %>
 <%= content_tag :p, @micropost.title %>
 <%= content_tag :p, @micropost.content %>
+<% if !@micropost.attachment.file.nil? %>
+  <%= link_to "Scarica allegato", @micropost.attachment.url %>
+<% else %>
+  <%= content_tag :p, "Nessun allegato" %>
+<% end %>

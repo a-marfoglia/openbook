@@ -24,6 +24,6 @@ before_action :logged_in_user, only: [:new, :create]
   
   private
     def micropost_params
-      params.require(:micropost).permit(:title, :content, :category_id)
+      params.require(:micropost).permit(:title, :content, :category_id, :attachment)
     end
 end
