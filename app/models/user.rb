@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  mount_uploader :picture, PictureUploader
   has_many :microposts, dependent: :destroy
   has_many :comments, dependent: :destroy
   attr_accessor :remember_token
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_blank: true
 
   # Returns the hash digest of the given string.
   def User.digest(string)

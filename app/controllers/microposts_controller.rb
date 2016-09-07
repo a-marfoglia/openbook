@@ -12,9 +12,8 @@ before_action :logged_in_user, only: [:new, :create]
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      redirect_to @micropost
+      redirect_to microposts_path
     else
-      flash.now[:danger] = @micropost.errors.full_messages
       render 'new'
     end
   end
@@ -25,6 +24,6 @@ before_action :logged_in_user, only: [:new, :create]
   
   private
     def micropost_params
-      params.require(:micropost).permit(:title, :content)
+      params.require(:micropost).permit(:title, :content, :category_id)
     end
 end

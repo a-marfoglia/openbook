@@ -1,2 +1,5 @@
 <% provide(:title, @user.name) %>
-<%= @user.name %>, <%= @user.email %>
+<%= image_tag @user.picture.small.url, alt: "Immagine del profilo" %><br>
+<%= @user.name %><br>
+<%= @user.email %><br>
+<%= link_to 'Modifica immagine del profilo', edit_picture_upload_path(@user.id) %>

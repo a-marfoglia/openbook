@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:trigger_modal] = "signup"
-      flash[:errors] = @user.errors.full_messages
+      flash[:signup_errors] = @user.errors.full_messages
       redirect_to forwarding_url || root_path
     end
   end

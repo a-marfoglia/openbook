@@ -1,6 +1,8 @@
 <% provide(:title, 'Nuovo post') %>
 <%= form_for @micropost do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <%= f.text_field :title, class: 'form-control', placeholder: "Inserisci il titolo" %>
   <%= f.text_field :content, class: 'form-control', placeholder: "Inserisci la trama" %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Categoria" %>
   <%= f.submit "Crea", class: 'btn btn-default' %>
 <% end %>

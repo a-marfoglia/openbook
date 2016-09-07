@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907174356) do
+ActiveRecord::Schema.define(version: 20160907202640) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160907174356) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.string   "avatar"
+    t.string   "picture"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

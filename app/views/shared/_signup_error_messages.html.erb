@@ -1,0 +1,13 @@
+
+<% if flash[:signup_errors] && flash[:signup_errors].any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(flash[:signup_errors].count, "error") %>.
+    </div>
+    <ul>
+    <% flash[:signup_errors].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -112,10 +112,10 @@ h2 {
 	font-weight: 700;
 }
 
-img {
+/* img {
 	width: 100%;
 	border: none;
-}
+}*/
 
 #logo-principale{
 	margin-top:8px;
@@ -195,6 +195,10 @@ img {
     text-align: center;
     color: #333333;
     margin-top: 15px;
+  }
+  img {
+	  width: 100%;
+	  border: none;
   }
 }
 /*end section2 */
