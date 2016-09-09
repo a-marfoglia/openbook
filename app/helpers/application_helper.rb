@@ -9,6 +9,11 @@ module ApplicationHelper
     end
   end
 
+  def correct_user?
+    return true if current_user && current_user == @user
+    false
+  end
+
   def triggerSignupModal?()
     return true if flash[:trigger_modal] == "signup"
     return false
