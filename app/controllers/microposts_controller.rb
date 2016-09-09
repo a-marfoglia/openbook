@@ -20,6 +20,7 @@ before_action :logged_in_user, only: [:new, :create]
   
   def show
     @micropost = Micropost.find(params[:id])
+    @comment = Comment.new
   end
   
   private

@@ -1,3 +1,5 @@
+<% provide(:title, @micropost.title) %>
+
 <%= content_tag :p, "Autore: #{@micropost.user.name}" %>
 <%= content_tag :p, @micropost.title %>
 <%= content_tag :p, @micropost.content %>
@@ -6,3 +8,12 @@
 <% else %>
   <%= content_tag :p, "Nessun allegato" %>
 <% end %>
+<div>
+  <h2>Commenta</h2>
+  <%= form_for @comment do |f| %>
+    <%= render 'shared/error_messages', object: @comment %>
+    <%= f.hidden_field :micropost_id, value: @micropost.id %>
+    <%= f.text_area :content, placeholder: "Scrivi un commento..." %><br>
+    <%= f.submit "Invia commento" %>
+  <% end %>
+</div>
