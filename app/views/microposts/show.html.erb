@@ -9,11 +9,20 @@
   <%= content_tag :p, "Nessun allegato" %>
 <% end %>
 <div>
-  <h2>Commenta</h2>
-  <%= form_for @comment do |f| %>
-    <%= render 'shared/error_messages', object: @comment %>
-    <%= f.hidden_field :micropost_id, value: @micropost.id %>
-    <%= f.text_area :content, placeholder: "Scrivi un commento..." %><br>
-    <%= f.submit "Invia commento" %>
-  <% end %>
+  <h2>Commenti:</h2>
+  <li>
+    <%= render @micropost.comments %>
+  </li>
 </div>
+
+<% if logged_in? %>
+  <div>
+    <h2>Commenta</h2>
+    <%= form_for @comment do |f| %>
+      <%= render 'shared/error_messages', object: @comment %>
+      <%= f.hidden_field :micropost_id, value: @micropost.id %>
+      <%= f.text_area :content, placeholder: "Scrivi un commento..." %><br>
+      <%= f.submit "Invia commento" %>
+    <% end %>
+  </div>
+<% end %>
