@@ -1,6 +1,7 @@
 <% provide(:title, @user.name) %>
 <h1>Modifica l'immagine del profilo</h1>
 <%= form_for(@user, url: picture_upload_path(params[:id])) do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
   <%= f.file_field :picture %>
   <%= f.submit "Cambia immagine" %>
 <% end %>

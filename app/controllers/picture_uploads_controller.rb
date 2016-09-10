@@ -1,5 +1,6 @@
 class PictureUploadsController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def edit
     @user = User.find(params[:id])
@@ -10,7 +11,6 @@ class PictureUploadsController < ApplicationController
     if @user.update_attributes(picture: params[:user][:picture])
       redirect_to @user
     else
-      flash.now[:danger] = @user.errors.full_messages
       render 'edit'
     end
   end
