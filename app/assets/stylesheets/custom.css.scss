@@ -56,9 +56,12 @@ p {
 
 /* forms */
 .modal-footer{
-  padding: 15px 0;
+  padding-top:15px;
+  padding-bottom: 0;
   input[type="submit"]{
     width: 100%;
+    background-color:#2F2F2F;
+    border:none;
   }
 }
 
@@ -91,7 +94,23 @@ input {
   }
 }
 
+.modal-dialog{
+  margin: 145px auto;
+}
+.modal-content{
+  border-radius:0;
+}
+.modal-body{
+  .glyphicon{
+    color:#2F2F2F;
+  }
+  .form-control, .input-group-addon{
+    border-radius:0;  
+  }
+}
+
 .checkbox {
+  margin-top:30px!important;
   span {
     margin-left: 20px;
     font-weight: normal;
@@ -101,6 +120,7 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+  margin-top:1px!important;
 }
 
 a {
@@ -243,13 +263,13 @@ h2 {
 
   .userinfo {
     width: 15%;
-    padding: 20px 0 15px 15px;
+    padding: 15px 0 14px 10px;
   }
 
   .posttext {
     width: 85%;
     padding-right: 30px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 15px;
 
     color: #989c9e;
@@ -281,10 +301,10 @@ h2 {
 
   .comments {
       border-bottom: solid 1px #f1f1f1;
-      padding: 18px 0 25px 0;
+      padding: 10px 0 15px 0;
       text-align: center;
     .commentbg {
-        background-color: #bdc3c7;
+        background-color: #2F2F2F;
         border-radius: 2px;
         display: inline-block;
         padding: 12px 17px;
@@ -295,7 +315,7 @@ h2 {
       .mark {
         width: 11px;
         height: 11px;
-        background-color: #bdc3c7;
+        background-color: #2F2F2F;
         position: absolute;
         bottom: 0;
         left: 43%;
@@ -336,7 +356,7 @@ h2 {
   margin-bottom: 20px;
   h3 {
     color: #363838;
-    font-size: 14px;
+    font-size: 15px;
     font-family: 'Open Sans Bold', sans-serif;
     margin: 0;
     padding: 20px;
@@ -352,7 +372,7 @@ h2 {
     margin: 0;
     padding: 0;
     .badge {
-      background-color: #bdc3c7;
+      background-color: #2F2F2F;
       font-size: 12px;
       color: #ffffff;
       font-family: 'Open Sans Bold', sans-serif;
