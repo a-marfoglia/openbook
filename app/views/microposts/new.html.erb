@@ -1,9 +1,34 @@
 <% provide(:title, 'Nuovo post') %>
-<%= form_for @micropost do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.text_field :title, class: 'form-control', placeholder: "Inserisci il titolo" %>
-  <%= f.text_field :content, class: 'form-control', placeholder: "Inserisci la trama" %>
-  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Categoria" %>
-  <%= f.file_field :attachment %>
-  <%= f.submit "Crea", class: 'btn btn-default' %>
-<% end %>
+
+<section id="f-section3" class="col-xs-12">
+  <!--start topics -->
+  <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 newtopic sidebarblock"> 
+      <h2 class="row text-center">
+        Condividi il tuo racconto
+      </h2>
+      <%= form_for @micropost do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="col-xs-12 col-sm-7">
+          <%= f.text_field :title, class: 'form-control', placeholder: "Inserisci il titolo" %>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Categoria" %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.text_area :content, class: 'form-control', placeholder: "Inserisci la trama" %>
+        </div>
+        <div class="col-xs-12">
+          <div class="col-xs-6 col-sm-4 pull-left">
+            <label class="btn btn-primary btn-file">
+              Allega file 
+              <%= f.file_field :attachment, html: {style: { display: 'none' } } %>
+            </label>
+          </div>
+          <div class="col-xs-6 col-sm-4 pull-right">
+            <%= f.submit "Pubblica", class: 'button btn pull-right btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
