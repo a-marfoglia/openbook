@@ -13,12 +13,12 @@
 
 		      <%= content_tag :div, class: 'input-group' do %>
 		        <%= f.email_field :email, class: 'form-control', placeholder: "E-mail" %>
-			    <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon' %>
+			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon' %>
 		      <% end %>
 
 		      <%= content_tag :div, class: 'input-group' do %>
 		        <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
-			    <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon' %>
+			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon' %>
 		      <% end %>
 
           <%= f.label :remember_me, class: "checkbox inline" do %>

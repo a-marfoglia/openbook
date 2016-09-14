@@ -8,25 +8,26 @@
       <div class="modal-body">
         <%= form_for(:user, url: users_path) do |f| %>
           <%= render 'shared/signup_error_messages' %>
-
-          <%= f.hidden_field :forwarding_url, value: request.url if request.get? %>
-
 		  
-          <%= content_tag :div, (f.text_field :name, class: 'form-control', placeholder: "Username")+
-		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-user'), class: 'input-group-addon'),
-			  class: 'input-group' %>
+		      <%= content_tag :div, class: 'input-group' do %>
+		        <%= f.text_field :email, class: 'form-control', placeholder: "Username" %>
+			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-user'), class: 'input-group-addon' %>
+		      <% end %>
 
-          <%= content_tag :div, (f.text_field :email, class: 'form-control', placeholder: "E-mail")+
-		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon'),
-			  class: 'input-group' %>
+		      <%= content_tag :div, class: 'input-group' do %>
+		        <%= f.email_field :email, class: 'form-control', placeholder: "E-mail" %>
+			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-envelope'), class: 'input-group-addon' %>
+		      <% end %>
 
-          <%= content_tag :div, (f.text_field :password, class: 'form-control', placeholder: "Password")+
-		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon'),
-			  class: 'input-group' %>
+		      <%= content_tag :div, class: 'input-group' do %>
+		        <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-lock'), class: 'input-group-addon' %>
+		      <% end %>
 
-		<%= content_tag :div, (f.text_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation")+
-		                        (content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-ok'), class: 'input-group-addon'),
-			  class: 'input-group' %>
+		      <%= content_tag :div, class: 'input-group' do %>
+            <%= f.text_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation" %>
+            <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-ok'), class: 'input-group-addon' %>
+			   <% end %>
 
         <div class="modal-footer">
           <%= f.submit "Registrati", class: "btn btn-primary" %>
