@@ -19,11 +19,14 @@
             <%= f.text_area :content, class: 'form-control', placeholder: "Inserisci la trama" %>
           </div>
           <div class="col-xs-12">
-            <div class="col-xs-6 col-sm-4 pull-left">
-              <label class="btn btn-primary btn-file">
+            <div id="div_attachment" class="col-xs-6 col-sm-4 pull-left">
+              <label id="label_attachment" class="btn btn-primary btn-file">
                 Allega file 
                 <%= f.file_field :attachment %>
               </label>
+              <span id="check_file" class="glyphicon glyphicon-check" data-toggle="popover"
+                                    data-trigger="hover" data-content="Elimina allegato">
+              </span>
             </div>
             <div class="col-xs-6 col-sm-4 pull-right">
               <%= f.submit "Pubblica", class: 'button btn pull-right btn-primary' %>
@@ -37,3 +40,28 @@
     </aside>
   </section>
 </div>
+<script>
+  button = $('#delete_attachment');
+  label = $('#label_attachment');
+  input = $('#micropost_attachment');
+  check = $('#check_file');
+
+  function check_attachment() {
+    if (input.val() != "") {
+      check.fadeIn();
+    }else{
+      check.hide();
+    }
+  }
+
+  input.change(check_attachment);
+
+  check.click(function() {
+    input.val("");
+    check_attachment();
+  });
+
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+  });
+</script>

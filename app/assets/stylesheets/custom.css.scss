@@ -504,8 +504,10 @@ input {
     input[type="file"] {
       display: none;
     }
-    label.btn-file:hover {
-      
+    #check_file{
+      display: none;
+      color: #049cdb;
+      cursor: pointer;
     }
     textarea{
       resize: none;
