@@ -10,7 +10,7 @@
           <%= render 'shared/signup_error_messages' %>
 		  
 		      <%= content_tag :div, class: 'input-group' do %>
-		        <%= f.text_field :email, class: 'form-control', placeholder: "Username" %>
+		        <%= f.text_field :name, class: 'form-control', placeholder: "Username" %>
 			      <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-user'), class: 'input-group-addon' %>
 		      <% end %>
 
@@ -25,7 +25,7 @@
 		      <% end %>
 
 		      <%= content_tag :div, class: 'input-group' do %>
-            <%= f.text_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation" %>
+            <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation" %>
             <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-ok'), class: 'input-group-addon' %>
 			   <% end %>
 

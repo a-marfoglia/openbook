@@ -32,10 +32,6 @@ body {
   padding-right: 0 !important /* evita lo slittamento del body per colpa dei modals */
 }
 
-.commentbg, .paginationforum li a, span, .button, .mark, .badge{
-	background-color: #2F2F2F!important;
-}
-
 .button{
 	  height: 40px;
     width:80%;
@@ -296,14 +292,6 @@ input {
     border-left: solid 1px #f1f1f1;
   }
 
-  .avatar {
-    width: 37px;
-    margin-left: 5px;
-    img {
-	    border-radius: 50%;
-    }
-  }
-
   .comments {
       border-bottom: solid 1px #f1f1f1;
       padding: 10px 0 15px 0;
@@ -349,6 +337,14 @@ input {
     span {
       height: 14px;
     }
+  }
+}
+
+.avatar {
+  width: 37px;
+  margin-left: 5px;
+  img {
+    border-radius: 50%;
   }
 }
 
@@ -494,33 +490,38 @@ input {
   #txt-info-user span{
 	  background-color: transparent !important;
   }
+  .commentbg, .paginationforum li a, span, .button, .mark, .badge{
+	  background-color: #2F2F2F!important;
+  }
 }
 
 /***********************  editor **************************/
 
 #f-section3 {
+  textarea{
+    resize: none;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #f1f1f1 !important;
+    padding: 20px !important;
+    font-size: 14px !important;
+    color: #989c9e !important;
+    font-family: 'Open Sans Light', sans-serif;
+    margin-bottom: 20px;
+  }
   .newtopic {
     padding-bottom: 10px;
     input[type="file"] {
       display: none;
     }
+    textarea{
+      height: 150px;    
+    }
     #check_file{
       display: none;
       color: #049cdb;
       cursor: pointer;
-    }
-    textarea{
-      resize: none;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-      border: none !important;
-      background-color: #f1f1f1 !important;
-      padding: 20px !important;
-      font-size: 14px !important;
-      color: #989c9e !important;
-      font-family: 'Open Sans Light', sans-serif;
-      margin-bottom: 20px;
-      height: 150px;
     }
   }
 }

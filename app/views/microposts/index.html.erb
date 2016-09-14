@@ -1,16 +1,18 @@
 <% provide(:title, 'Forum') %>
 <div id="sfondo" class="container-fluid">
   <div class="container">
+    <%= render 'shared/forum_navbar' %>
     <!-- start of forum -->
     <section id="f-section3" class="col-xs-12">
       <!--start topics -->
       <div id="microposts-list" class="col-xs-12 col-md-8">
-        <%= render @microposts %>
+        <% if !@microposts.empty? %>
+          <%= render @microposts %>
+        <% else %>
+          <p>Non ci sono topic da visualizzare</p>
+        <% end %>
       </div>
-        <!--end tpoics -->
-      <div class="col-md-4">
-        <%= link_to "Nuovo", new_micropost_path %>
-      </div>
+        <!--end topics -->
       <!--start lateral boxes -->
       <div class="col-xs-12 col-md-4">
         <%= render 'categories' %>

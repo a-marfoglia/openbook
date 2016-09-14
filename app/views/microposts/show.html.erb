@@ -1,19 +1,10 @@
 <% provide(:title, @micropost.title) %>
 
-<%= content_tag :p, "Autore: #{@micropost.user.name}" %>
-<%= content_tag :p, @micropost.title %>
-<%= content_tag :p, @micropost.content %>
 <% if !@micropost.attachment.file.nil? %>
   <%= link_to "Scarica allegato", @micropost.attachment.url %>
 <% else %>
   <%= content_tag :p, "Nessun allegato" %>
 <% end %>
-<div>
-  <h2>Commenti:</h2>
-  <li>
-    <%= render @micropost.comments %>
-  </li>
-</div>
 
 <% if logged_in? %>
   <div>
@@ -26,3 +17,62 @@
     <% end %>
   </div>
 <% end %>
+
+________________________________________________________________________________
+<div class="container-fluid" id="sfondo" >
+<!-- start of forum -->
+  <div class="container">
+    <%= render 'shared/forum_navbar' %>
+    <section id="f-section3" class="col-xs-12">
+      <!--start topics -->
+	    <div id="topic" class="col-xs-12 col-md-8">
+		    <div class="col-xs-12 post">
+			    <div class="userinfo pull-left">
+			      <div class="avatar">
+              <%= image_tag @micropost.user.picture.thumb.url %>
+			      </div>
+            <p><%= @micropost.user.name %></p>
+			      <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>25</a>
+			    </div>
+			    <div class="posttext pull-left">
+			      <h2><%= @micropost.title %></h2>
+			      <p><%= @micropost.content %></p>
+            <div class="hidden-xs pull-left">
+					    <i class="fa fa-clock-o posted pull-right"><%= @micropost.created_at %></i>
+				    </div>
+				    <div class="col-xs-12 col-sm-5 pull-right">
+              <div class="col-xs-3">
+                <i class="glyphicon glyphicon-thumbs-up"></i>
+              </div>
+					    <div class="col-xs-3">
+					      <i class="glyphicon glyphicon-eye-open"></i>
+					    </div>
+					    <div class="col-xs-3">
+					      <i class="glyphicon glyphicon-download"></i>
+					    </div>
+					    <div class="col-xs-3">
+					      <i class="glyphicon glyphicon-share"></i>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+        <h2>Sezione commenti</h2>
+			  <!--REPLAY -->
+        <% if logged_in? %>
+			    <div id="comment-area" class="sidebarblock col-xs-12">
+            <div class="userinfo pull-left">
+				      <div class="avatar">
+					      <%= image_tag @micropost.user.picture.thumb.url %>
+				      </div>
+				    </div>
+            <div  class="col-xs-10">
+              <textarea placeholder="Inserisci commento" class="form-control"></textarea>
+			      </div>
+            <i class="glyphicon glyphicon-send"></i>
+          </div>
+          <%= render @micropost.comments %>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div>
