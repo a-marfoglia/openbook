@@ -32,21 +32,16 @@ body {
   padding-right: 0 !important /* evita lo slittamento del body per colpa dei modals */
 }
 
-.button{
-	  height: 40px;
-    width:80%;
-  }
-
-.btn-primary {
-    background-color: #1abc9c;
-    box-shadow: none;
-    border-radius: 2px;
+.btn{
+	  font-size: 14px;
+    color: white;
+    border-radius: 0px;
     padding: 10px 15px;
-    color: #ffffff;
-    font-size: 14px;
-    font-family: 'Open Sans Bold', sans-serif; 
-    border: none;
-}
+    background-color: #2F2F2F;
+  }
+.btn:hover{
+    background-color:#f1f1f1;  
+  }
 
 .center {
   text-align: center;
@@ -414,7 +409,7 @@ input {
     color: #989c9e;
     font-family: 'Open Sans Light', sans-serif; 
     margin-bottom: 20px;
-    height: 50px;
+    height: 60px;
   }
     
   select:hover, select:focus, select:active {
@@ -442,10 +437,18 @@ input {
 #f-section2{
 	background-color:#fbfbfb;
 	border-bottom: 1px solid rgb(201, 204, 205);
-	padding: 14px 100px;
+	padding: 14px 100px 7px 100px;
  
- input{
-	  height:40px;
+ input,.span{
+	  height:40px!important;
+  }
+  
+  .col-xs-3{
+    padding-top:7px;
+    a{
+      font-size:15px;
+      color:black;
+    }
   }
 
   img{
@@ -490,7 +493,7 @@ input {
   #txt-info-user span{
 	  background-color: transparent !important;
   }
-  .commentbg, .paginationforum li a, span, .button, .mark, .badge{
+  .commentbg, .paginationforum li a, span, .mark, .badge{
 	  background-color: #2F2F2F!important;
   }
 }
@@ -522,6 +525,13 @@ input {
       display: none;
       color: #049cdb;
       cursor: pointer;
+    }
+    label{
+      background-color:#47a847;
+      color:white!important;
+    }
+    .pull-right .btn{
+      width:80%;    
     }
   }
 }

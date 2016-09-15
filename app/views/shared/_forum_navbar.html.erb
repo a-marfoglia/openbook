@@ -23,16 +23,18 @@
 	    </ul>
 	  </div>
 	  <div class="col-xs-12 col-sm-6 col-lg-4">
-	    <div class="input-group">
-		  <input type="text" class="form-control" placeholder="Ricerca racconto..">   
-		  <span class="input-group-addon glyphicon glyphicon-search"></span>
-	    </div>    
+	    <%= content_tag :div, class: 'input-group' do %>
+		    <input type="text" class="form-control" placeholder="Ricerca racconto..">   
+		    <%= content_tag :span, (content_tag :i, nil, class: 'glyphicon glyphicon-search'), class: 'input-group-addon' %>
+      <% end %>    
 	  </div>
 	  <div class="col-xs-8 col-sm-5 col-lg-3 text-center">
-      <%= link_to "Scrivi racconto", new_micropost_path, class: 'btn btn-primary' %>
+      <%= link_to "Scrivi racconto", new_micropost_path, class: 'btn' %>
 	  </div>
 	  <div class="col-xs-3 col-sm-1 avatar">
 	    <img src="forum_files/img/avatar.jpg" alt=""></img>
 	  </div>
   </section>
 <!-- end of forum-nav -->
+			      
+		     
