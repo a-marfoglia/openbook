@@ -1,7 +1,7 @@
 namespace :categories do
   desc "Add default categories to db"
   task :default_categories => :environment do
-    if Category.count == 0
+    if !Category.find_by(name: "Horror")
       Category.create(name: "Horror")
       Category.create(name: "Psicologico")
       Category.create(name: "Avventura")

@@ -184,12 +184,16 @@ input {
 	background-size: cover;
 	padding:130px 0;
 	overflow: hidden;
+	
+	@media only screen and (max-width: $screen-xs-max){
+	  padding: 40px 0;
+	}
 }
 
 .header-content {
   padding-top: 220px;
   h1 {
-    font-size: 70px;
+    font-size: 66px;
     color: #FFF;
     text-transform: uppercase;
     text-shadow: 2px 2px #000;
@@ -425,12 +429,30 @@ input {
 	background-color: #d5d5d5;
 }
 
+@media only screen and (max-width: $screen-xs-max){
+  #sfondo, .no-xs-padding{
+    padding: 0;
+  }
+  
+  .post .comments .commentbg{
+    padding: 7px 7px;
+    font-size: 11px;
+    .mark{
+      left: 39%;
+    }
+  }
+  
+}
+
 /*************** ---- f-section1 ----- ****************/
 #f-section1{
-	background-image: url("img/bg-3.jpg");
+	background-image: url(image_path("forum-bg.jpg"));
 	padding:140px 0px;
 	background-size: cover;
 	overflow: hidden;
+	@media only screen and (max-width: $screen-xs-max){
+	  padding: 100px 0;
+	}
 }
 
 /*************** ---- f-section2 ----- ****************/
@@ -452,26 +474,27 @@ input {
   }
 
   img{
-    width:40px;
+    width: 45px;
+    margin-top: 6px;
   }
 }
 
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: $screen-xs-max){
 
   	#f-section2 {
-		padding: 14px 0px;
+		  padding: 14px 0px;
+		  
+		  .col-xs-12 {
+  		  margin-bottom:10px;
+  	  }
   	}
+
   	#f-section3{
   		padding-left: 0px;
     	padding-right: 0px;
   	}
 }
 
-@media only screen and (max-width: 768px){
-	#f-section2 .col-xs-12 {
-  		margin-bottom:10px;
-  	}
-}
 /*************** ---- f-section3 ----- ****************/
 
 #f-section3{
@@ -494,7 +517,7 @@ input {
 	  background-color: transparent !important;
   }
   .commentbg, .paginationforum li a, span, .mark, .badge{
-	  background-color: #2F2F2F!important;
+	  background-color: #2F2F2F;
   }
 }
 
@@ -540,13 +563,14 @@ input {
 
 #profile{
   padding:0;
-  margin-bottom:20px;
+  margin-bottom: 30px;
   
   /* Per far funzionare il cambia immagine */
   .user-pic-container {
     position: relative;
     height: 100px;
     width: 100px;
+    margin-top: 25px;
     span {
       position: absolute;
       top: 0;
@@ -577,8 +601,7 @@ input {
   img{
     height: 100px;
     width: 100px;
-    /* margin-top: 22px;      Ho dovuto commentare qualche regola, da mettere a posto
-    border: 3px solid white; */ 
+    border: 3px solid white;
   }
 
   .col-xs-5 {
