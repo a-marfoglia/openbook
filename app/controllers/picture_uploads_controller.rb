@@ -11,7 +11,8 @@ class PictureUploadsController < ApplicationController
     if @user.update_attributes(picture: params[:user][:picture])
       redirect_to @user
     else
-      render 'edit'
+      flash[:danger] = "Sono supportate solamente immagini nei formati *.jpeg, *jpg, *.png, *.gif e inferiori a un peso di 5MB."
+      redirect_to @user
     end
   end
 end

@@ -1,5 +1,28 @@
 <% provide(:title, @user.name) %>
-<%= image_tag @user.picture.small.url, alt: "Immagine del profilo" %><br>
-<%= @user.name %><br>
-<%= @user.email %><br>
-<%= link_to 'Modifica immagine del profilo', edit_picture_upload_path(@user) if correct_user? %>
+<div class="container" id="profile">
+  <div class="user-pic-container">
+    <%= image_tag @user.picture.small.url, alt: "Immagine del profilo" %><br>
+    <% if correct_user? %>
+      <span>Cambia immagine</span>
+      <%= form_for(current_user, url: picture_upload_path(current_user)) do |f| %>
+      <div class="hiddenfile">
+        <%= f.file_field :picture %>
+      </div>
+      <% end %>
+      <script>
+        /* autosubmit */
+        input = $('#user_picture');
+        input.change(function(){
+          if (input.val() != "")
+            input.closest('form').submit();
+        });
+        /* apre l'input file utilizzando lo span */
+        $('.user-pic-container span').click(function(){
+          input.trigger('click');
+        });
+      </script>
+    <% end %>
+  </div>
+  <%= @user.name %><br>
+  <%= @user.email %><br>
+</div>

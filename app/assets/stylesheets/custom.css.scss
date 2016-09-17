@@ -541,12 +541,44 @@ input {
 #profile{
   padding:0;
   margin-bottom:20px;
+  
+  /* Per far funzionare il cambia immagine */
+  .user-pic-container {
+    position: relative;
+    height: auto;
+    width: 100%;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      max-width: 100px;
+
+      cursor: pointer;
+      color: #fff;
+      background: RGBA(0, 0, 0, 0.47);
+    }
+    &:hover span {
+      display: inline;
+    }
+    .hiddenfile{
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      span{
+        display: inline;
+      }
+    }
+  }
 
   img{
     height: 100px;
     width: 100px;
-    margin-top: 22px;
-    border: 3px solid white;
+    /* margin-top: 22px;      Ho dovuto commentare qualche regola, da mettere a posto
+    border: 3px solid white; */ 
   }
 
   .col-xs-5 {
