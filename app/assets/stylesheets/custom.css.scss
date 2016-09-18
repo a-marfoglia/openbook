@@ -716,42 +716,36 @@ input {
 }
 
 /***********************  pagination **************************/
-/*.paginationforum li {
-    list-style: none;
-    display: inline-block;
-    margin-left: 20px;
-}
 
-.paginationforum li a {
-    min-width: 24px;
-    height: 24px;
-    font-size: 14px;
-    font-family: 'Open Sans Semibold', sans-serif;
-    color: #ffffff;
-    background-color: #cfd5d7;
-    border-radius: 2px;
-    display: block;
-    padding: 0 8px;
-    line-height: 24px;
-}
-
-.forum li a.active,
-.paginationforum li a:hover,
-.paginationforum li a:focus,
-.paginationforum li a:active {
-    color: #363838;
-    background-color: #ffffff;
-    box-shadow: 0 1px 2px #c9cccd;
-    font-family: 'Open Sans Bold', sans-serif;
-    text-decoration: none;
-
-}
-
-.paginationforum {
+.pagination {
     margin: 19px auto;
     padding: 0;
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 20px;
+      a {
+        min-width: 24px;
+        height: 24px;
+        font-size: 14px;
+        font-family: 'Open Sans Semibold', sans-serif;
+        color: #ffffff;
+        background-color: #cfd5d7;
+        border-radius: 2px;
+        display: block;
+        padding: 0 8px;
+        line-height: 24px;
+      }
+    }   
+}
+#f-section3 .pagination > .active > a{  /*numero della pagina dove siamo attualmente*/
+    color: white;
+    background-color: #2F2F2F;
+    border-color:grey;
+
 }
 
+/* queste cose qui sono lo stile delle puntu delle frecce da mettere al posto del previous e next
 .prevnext {
     font-size: 26px;
     color: #cfd5d7;
