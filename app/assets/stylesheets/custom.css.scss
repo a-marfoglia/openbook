@@ -124,6 +124,10 @@ input {
 
 .modal-dialog{
   margin: 145px auto;
+  @media only screen and (max-width: $screen-xs-max){
+	  padding: 30px;
+	}
+  
 }
 .modal-content{
   border-radius:0;
@@ -272,6 +276,12 @@ input {
   .userinfo {
     width: 15%;
     padding: 15px 0 14px 10px;
+    @media only screen and (max-width: $screen-xs-max){
+      padding-left:0;
+      .avatar{
+          margin:0;
+      }
+    }
   }
 
   .posttext {
@@ -284,6 +294,17 @@ input {
     font-size: 14px;
     font-family: 'Open Sans Light', sans-serif;   
     line-height: 25px;
+    @media only screen and (max-width: $screen-xs-max){
+      padding-left:15px;
+      padding-right:1px;
+      padding-bottom:5px;
+      font-size:12px;
+      h2{
+        font-size:17px;
+        margin-top:15px;
+        margin-bottom:5px;
+      }
+    }
   }
 
   .postinfo {
@@ -340,7 +361,6 @@ input {
 }
 
 .avatar {
-  width: 37px;
   margin-left: 5px;
   img {
     border-radius: 50%;
@@ -473,9 +493,12 @@ input {
     }
   }
 
-  img{
+  .logo-button img{
     width: 45px;
     margin-top: 6px;
+  }
+  @media only screen and (max-width: $screen-sm-max){
+    padding: 14px 50px 7px 50px;
   }
 }
 
@@ -526,13 +549,13 @@ input {
 #f-section3 {
   textarea{
     resize: none;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    background-color: #f1f1f1 !important;
-    padding: 20px !important;
-    font-size: 14px !important;
-    color: #989c9e !important;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-size: 14px;
+    color: #989c9e;
     font-family: 'Open Sans Light', sans-serif;
     margin-bottom: 20px;
   }
@@ -635,7 +658,7 @@ input {
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: $screen-xs-max) {
 	#profile h3{
     font-size:20px;  
   }
@@ -671,7 +694,74 @@ input {
   textarea{
 	  margin-bottom: 12px;
   }
+  
+  .glyphicon-send{
+    margin-top: 70px; 
+    font-size: 20px;
+  }
+  
+  @media only screen and (max-width: $screen-xs-max) {
+    padding-left: 10px;
+    padding-right: 0px;
+    .avatar{
+      padding-right: 0px;
+    }
+    textarea{
+      padding:10px 10px 20px 10px;
+    }
+    .glyphicon-send{
+      margin-top: 50px;
+    }
+  }
 }
+
+/***********************  pagination **************************/
+/*.paginationforum li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.paginationforum li a {
+    min-width: 24px;
+    height: 24px;
+    font-size: 14px;
+    font-family: 'Open Sans Semibold', sans-serif;
+    color: #ffffff;
+    background-color: #cfd5d7;
+    border-radius: 2px;
+    display: block;
+    padding: 0 8px;
+    line-height: 24px;
+}
+
+.forum li a.active,
+.paginationforum li a:hover,
+.paginationforum li a:focus,
+.paginationforum li a:active {
+    color: #363838;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px #c9cccd;
+    font-family: 'Open Sans Bold', sans-serif;
+    text-decoration: none;
+
+}
+
+.paginationforum {
+    margin: 19px auto;
+    padding: 0;
+}
+
+.prevnext {
+    font-size: 26px;
+    color: #cfd5d7;
+    margin-top: 11px;
+    display: block;
+}
+
+.prevnext.last {
+    margin-left: 20px;
+}*/
 
 
 
