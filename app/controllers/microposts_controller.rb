@@ -2,7 +2,7 @@ class MicropostsController < ApplicationController
 before_action :logged_in_user, only: [:new, :create]
 
   def index
-    @microposts = Micropost.paginate(page: params[:page])
+    @microposts = Micropost.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -20,7 +20,7 @@ before_action :logged_in_user, only: [:new, :create]
 
   def show
     @micropost = Micropost.find(params[:id])
-    @micropost.count_view
+    @micropost.add_count_view
     @comment = Comment.new
   end
 
