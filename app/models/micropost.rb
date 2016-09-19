@@ -10,6 +10,11 @@ class Micropost < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 300 }
   validate  :attachment_size
 
+  def count_view
+    self.increment :views_count
+    self.save
+  end
+
   private
     # Validates the size of an uploaded attachment.
     def attachment_size

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907231020) do
+ActiveRecord::Schema.define(version: 20160919125340) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 20160907231020) do
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "title"
     t.integer  "category_id"
     t.string   "attachment"
+    t.integer  "views_count", default: 0
   end
 
   add_index "microposts", ["category_id"], name: "index_microposts_on_category_id"

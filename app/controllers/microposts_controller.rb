@@ -4,11 +4,11 @@ before_action :logged_in_user, only: [:new, :create]
   def index
     @microposts = Micropost.paginate(page: params[:page])
   end
-  
+
   def new
     @micropost = Micropost.new
   end
-  
+
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
@@ -17,12 +17,13 @@ before_action :logged_in_user, only: [:new, :create]
       render 'new'
     end
   end
-  
+
   def show
     @micropost = Micropost.find(params[:id])
+    @micropost.count_view
     @comment = Comment.new
   end
-  
+
   private
     def micropost_params
       params.require(:micropost).permit(:title, :content, :category_id, :attachment)

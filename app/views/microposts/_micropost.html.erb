@@ -21,7 +21,7 @@
         <div class="mark"></div>
       </div>
     </div>
-    <div class="views"><i class="glyphicon glyphicon-eye-open"></i> Views</div>
-    <div class="time"><i class="glyphicon glyphicon-time"></i> <%= time_ago_in_words(micropost.created_at) %></div>                               
+    <div class="views"><i class="glyphicon glyphicon-eye-open"></i> <%= micropost.views_count %> Views</div>
+    <div class="time"><i class="glyphicon glyphicon-time"></i> <%= time_ago_in_words(micropost.created_at) %></div>
   </div>
 </div>
