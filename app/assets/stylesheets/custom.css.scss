@@ -364,6 +364,8 @@ input {
   margin-left: 5px;
   img {
     border-radius: 50%;
+    height:47px;
+    width:47px;
   }
 }
 
@@ -494,11 +496,18 @@ input {
   }
 
   .logo-button img{
-    width: 45px;
+    width: 50px;
     margin-top: 6px;
   }
+  
   @media only screen and (max-width: $screen-sm-max){
     padding: 14px 50px 7px 50px;
+    .logo-button img{
+      padding-top:0;
+    }
+    .cerca-paddding-left{
+      padding-left:35px;
+    }
   }
 }
 
@@ -510,6 +519,10 @@ input {
 		  .col-xs-12 {
   		  margin-bottom:10px;
   	  }
+  	  
+  	  .cerca-paddding-left{
+        padding-left:15px;
+      }
   	}
 
   	#f-section3{
@@ -674,42 +687,54 @@ input {
 
 /***********************  topic **************************/
 
-#topic .posttext p{
+#topic-area .posttext p{
 	border-bottom:1px solid rgb(201, 204, 205);
   padding-bottom: 5px;
 }
 
-#topic .posttext .glyphicon-time{
+#topic-area .posttext .glyphicon-time{
   	float:left!important;
+}
+
+#topic{
+  margin-bottom:70px;
 }
 
 #comment-area{
   padding-top: 12px;
-  padding-left: 40px;
+  margin-bottom:40px;
 
   .avatar{
     padding-right: 25px;
   }
     
   textarea{
-	  margin-bottom: 12px;
+	  margin-bottom: 0px;
+  }
+  
+  button{
+    margin-top:60px;
+    border:none;
+    background-color:inherit;
   }
   
   .glyphicon-send{
-    margin-top: 70px; 
     font-size: 20px;
   }
   
   @media only screen and (max-width: $screen-xs-max) {
     padding-left: 10px;
-    padding-right: 0px;
+    
+    .userinfo{
+      padding-top:0;
+    }
     .avatar{
       padding-right: 0px;
     }
     textarea{
       padding:10px 10px 20px 10px;
     }
-    .glyphicon-send{
+    button{
       margin-top: 50px;
     }
   }
@@ -736,6 +761,16 @@ input {
         padding: 0 8px;
         line-height: 24px;
       }
+    }
+    .prev, .next {
+      a{
+        background-color: inherit;
+        border: medium none;
+        color: #686868;
+        span{
+          background-color: inherit!important;
+        }
+      }
     }   
 }
 #f-section3 .pagination > .active > a{  /*numero della pagina dove siamo attualmente*/
@@ -744,20 +779,6 @@ input {
     border-color:grey;
 
 }
-
-/* queste cose qui sono lo stile delle puntu delle frecce da mettere al posto del previous e next
-.prevnext {
-    font-size: 26px;
-    color: #cfd5d7;
-    margin-top: 11px;
-    display: block;
-}
-
-.prevnext.last {
-    margin-left: 20px;
-}*/
-
-
 
 
 
