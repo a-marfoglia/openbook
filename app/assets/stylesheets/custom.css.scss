@@ -641,7 +641,9 @@ input {
   }
 
   .col-xs-5 {
-    background-color: #d5d5d5;
+    background-image: url(image_path('profile-back.png'));
+    background-position: center center;
+	  background-size: cover; 
     height: 150px;
   }
 
