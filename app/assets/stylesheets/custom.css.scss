@@ -40,7 +40,7 @@ body {
     background-color: #2F2F2F;
   }
 .btn:hover{
-    background-color:#f1f1f1;  
+    background-color:#f1f1f1;
   }
 
 .center {
@@ -127,7 +127,7 @@ input {
   @media only screen and (max-width: $screen-xs-max){
 	  padding: 30px;
 	}
-  
+
 }
 .modal-content{
   border-radius:0;
@@ -137,7 +137,7 @@ input {
     color:#2F2F2F;
   }
   .form-control, .input-group-addon{
-    border-radius:0;  
+    border-radius:0;
   }
 }
 
@@ -175,20 +175,20 @@ input {
 
 .navbar-inverse .navbar-nav > li > a {
 	font-size: 16px;
-	-webkit-user-select: none;  
-	-moz-user-select: none;    
-	-ms-user-select: none;      
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 
 /*Header layout e colori */
 #header {
-	background-image: url(image_path('index_bg.jpg')); 
+	background-image: url(image_path('index_bg.jpg'));
 	background-position: center center;
 	background-size: cover;
 	padding:130px 0;
 	overflow: hidden;
-	
+
 	@media only screen and (max-width: $screen-xs-max){
 	  padding: 40px 0;
 	}
@@ -282,6 +282,9 @@ input {
           margin:0;
       }
     }
+    p {
+      margin-left: -30px;;
+    }
   }
 
   .posttext {
@@ -292,7 +295,7 @@ input {
 
     color: #989c9e;
     font-size: 14px;
-    font-family: 'Open Sans Light', sans-serif;   
+    font-family: 'Open Sans Light', sans-serif;
     line-height: 25px;
     @media only screen and (max-width: $screen-xs-max){
       padding-left:15px;
@@ -322,7 +325,7 @@ input {
         padding: 12px 17px;
         color: #ffffff;
         font-size: 14px;
-        font-family: 'Open Sans Bold', sans-serif; 
+        font-family: 'Open Sans Bold', sans-serif;
         position: relative;
       .mark {
         width: 11px;
@@ -341,7 +344,7 @@ input {
     border-bottom: solid 1px #f1f1f1;
     color:#9da6aa;
     font-size: 12px;
-    font-family: 'Open Sans Regular', sans-serif; 
+    font-family: 'Open Sans Regular', sans-serif;
     text-align: center;
     line-height: 29px;
     span {
@@ -351,7 +354,7 @@ input {
   .time {
     color:#9da6aa;
     font-size: 12px;
-    font-family: 'Open Sans Regular', sans-serif; 
+    font-family: 'Open Sans Regular', sans-serif;
     text-align: center;
     line-height: 29px;
     span {
@@ -413,7 +416,7 @@ input {
   }
 }
 
-.newtopic { 
+.newtopic {
   input[type=text]{
     border-radius: 2px;
     box-shadow: none;
@@ -422,7 +425,7 @@ input {
     padding: 20px;
     font-size: 14px;
     color: #989c9e;
-    font-family: 'Open Sans Light', sans-serif; 
+    font-family: 'Open Sans Light', sans-serif;
     margin-bottom: 20px;
     height: 50px;
   }
@@ -433,11 +436,11 @@ input {
     background-color: #ffffff;
     font-size: 14px;
     color: #989c9e;
-    font-family: 'Open Sans Light', sans-serif; 
+    font-family: 'Open Sans Light', sans-serif;
     margin-bottom: 20px;
     height: 60px;
   }
-    
+
   select:hover, select:focus, select:active {
     box-shadow: none;
   }
@@ -455,7 +458,7 @@ input {
   #sfondo, .no-xs-padding{
     padding: 0;
   }
-  
+
   .post .comments .commentbg{
     padding: 7px 7px;
     font-size: 11px;
@@ -463,7 +466,7 @@ input {
       left: 39%;
     }
   }
-  
+
 }
 
 /*************** ---- f-section1 ----- ****************/
@@ -482,11 +485,11 @@ input {
 	background-color:#fbfbfb;
 	border-bottom: 1px solid rgb(201, 204, 205);
 	padding: 14px 100px 7px 100px;
- 
+
  input,.span{
 	  height:40px!important;
   }
-  
+
   .col-xs-3{
     padding-top:7px;
     a{
@@ -499,7 +502,7 @@ input {
     width: 50px;
     margin-top: 6px;
   }
-  
+
   @media only screen and (max-width: $screen-sm-max){
     padding: 14px 50px 7px 50px;
     .logo-button img{
@@ -515,11 +518,11 @@ input {
 
   	#f-section2 {
 		  padding: 14px 0px;
-		  
+
 		  .col-xs-12 {
   		  margin-bottom:10px;
   	  }
-  	  
+
   	  .cerca-paddding-left{
         padding-left:15px;
       }
@@ -578,7 +581,7 @@ input {
       display: none;
     }
     textarea{
-      height: 150px;    
+      height: 150px;
     }
     #check_file{
       display: none;
@@ -590,7 +593,7 @@ input {
       color:white!important;
     }
     .pull-right .btn{
-      width:80%;    
+      width:80%;
     }
   }
 }
@@ -600,7 +603,7 @@ input {
 #profile{
   padding:0;
   margin-bottom: 30px;
-  
+
   /* Per far funzionare il cambia immagine */
   .user-pic-container {
     position: relative;
@@ -643,7 +646,7 @@ input {
   .col-xs-5 {
     background-image: url(image_path('profile-back.png'));
     background-position: center center;
-	  background-size: cover; 
+	  background-size: cover;
     height: 150px;
   }
 
@@ -662,9 +665,9 @@ input {
   .col-xs-4,.col-xs-7,.col-xs-12,.col-sm-7{
     padding:0;
   }
-  
+
   #txt-info-user{
-    padding:0; 
+    padding:0;
     .col-xs-4{
 	    border-right:1px solid rgb(201, 204, 205);
 	    padding: 45px 10px;
@@ -675,15 +678,15 @@ input {
 
 @media only screen and (max-width: $screen-xs-max) {
 	#profile h3{
-    font-size:20px;  
+    font-size:20px;
   }
   #profile h5{
-    font-size:13px;  
+    font-size:13px;
   }
   #profile .pull-left{
-    padding-left:5px!important;  
+    padding-left:5px!important;
   }
-  
+
 }
 
 
@@ -709,24 +712,24 @@ input {
   .avatar{
     padding-right: 25px;
   }
-    
+
   textarea{
 	  margin-bottom: 0px;
   }
-  
+
   button{
     margin-top:60px;
     border:none;
     background-color:inherit;
   }
-  
+
   .glyphicon-send{
     font-size: 20px;
   }
-  
+
   @media only screen and (max-width: $screen-xs-max) {
     padding-left: 10px;
-    
+
     .userinfo{
       padding-top:0;
     }
@@ -773,7 +776,7 @@ input {
           background-color: inherit!important;
         }
       }
-    }   
+    }
 }
 #f-section3 .pagination > .active > a{  /*numero della pagina dove siamo attualmente*/
     color: white;
@@ -781,6 +784,3 @@ input {
     border-color:grey;
 
 }
-
-
-

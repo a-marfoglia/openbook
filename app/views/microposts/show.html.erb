@@ -1,12 +1,5 @@
 <% provide(:title, @micropost.title) %>
 
-<% if !@micropost.attachment.file.nil? %>
-  <%= link_to "Scarica allegato", @micropost.attachment.url %>
-<% else %>
-  <%= content_tag :p, "Nessun allegato" %>
-<% end %>
-
-________________________________________________________________________________
 <div class="container-fluid" id="sfondo" >
 <!-- start of forum -->
   <div class="container no-xs-padding">
@@ -19,7 +12,7 @@ ________________________________________________________________________________
 			      <div class="avatar">
               <%= image_tag @micropost.user.picture.thumb.url %>
 			      </div>
-            <p><%= @micropost.user.name %></p>
+            <p class="text-center"><%= @micropost.user.name %></p>
 			      <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>25</a>
 			    </div>
 			    <div class="posttext pull-left">
@@ -62,12 +55,12 @@ ________________________________________________________________________________
             <div class="col-xs-9">
               <%= form_for @comment do |f| %>
                 <%= f.hidden_field :micropost_id, value: @micropost.id %>
-                <%= f.text_area :content, placeholder: "Scrivi un commento...", class: 'form-control' %><br>
-			      </div>
-                <%= button_tag(type: 'submit') do %>
-                  <i class="glyphicon glyphicon-send"></i>
-                <% end %>
+                <%= f.text_area :content, placeholder: "Scrivi un commento...", class: 'form-control' %>
               <% end %>
+			      </div>
+            <%= button_tag(type: 'submit', form: 'new_comment') do %>
+              <i class="glyphicon glyphicon-send"></i>
+            <% end %>
           </div>
           <h2>Lista commenti</h2>
           <div id="lista-commenti" class="col-xs-12">
