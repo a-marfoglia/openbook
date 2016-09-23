@@ -38,5 +38,23 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
-end
 
+  # Returns the most published category by the user
+  def favourite_category
+    counting = Hash.new
+    # Counts all the categories
+    self.microposts.each do |micropost|
+      counting[micropost.category_id] ||= 1
+      counting[micropost.category_id] += 1
+    end
+
+    favourite_category_key = 0
+    counting.each do |key, value|
+      highest ||= value
+      favourite_category_key =  favourite_category_key == 0 ? key : favourite_category_key
+      favourite_category_key = value > highest ? key : favourite_category_key
+    end
+    return nil if favourite_category_key == 0
+    favourite_category_key
+  end
+end

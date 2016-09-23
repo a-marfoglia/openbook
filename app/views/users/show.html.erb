@@ -34,9 +34,14 @@
             </div>
             <div class="col-xs-7 pull-left">
               <h3><%= @user.name %></h3>
-		          <h5>Data di nascita: <i>da inserire</i></h5>
-		          <h5>Professione: <i>da inserire</i></h5>
-		          <h5>Genere preferito: <i>da inserire</i></h5>
+		          <h5>Data di nascita: <%= @user.birth_date ? @user.birth_date.strftime("%m/%d/%Y") : content_tag(:i, "sconosciuto") %> </h5>
+		          <h5>Professione: <%= @user.occupation ? @user.occupation : content_tag(:i, "sconosciuto") %> </h5>
+		          <h5>Genere preferito: <% if favourite_category = @user.favourite_category %>
+                                      <%= Category.find(favourite_category).name %>
+                                    <% else %>
+                                      <%= content_tag :i, "sconosciuto" %>
+                                    <% end %>
+              </h5>
             </div>
           </div>
           <div class="col-xs-12 col-sm-7 pull-right">
@@ -53,7 +58,7 @@
         </div>
       </div>
       <aside class="col-xs-12 col-md-4">
-        <%= render 'microposts/categories' %> 
+        <%= render 'microposts/categories' %>
       </aside>
     </section>
   </div>
