@@ -5,7 +5,68 @@
     <%= render 'shared/forum_navbar' %>
     <section id="f-section3" class="col-xs-12">
       <div class="col-md-8">
-        <div id="profile" class="col-xs-12">
+        <div id="profile" class="sidebarblock col-xs-12">
+          <div class="image-profile col-xs-3">
+            <div class="user-pic-container">
+              <%= image_tag @user.picture.small.url, alt: "Immagine del profilo" %><br>
+              <% if correct_user? %>
+                <span>Cambia immagine</span>
+                <%= form_for(current_user, url: picture_upload_path(current_user)) do |f| %>
+                  <div class="hiddenfile">
+                    <%= f.file_field :picture %>
+                  </div>
+                <% end %>
+                <script>
+                  /* autosubmit */
+                  input = $('#user_picture');
+                  input.change(function(){
+                    if (input.val() != "")
+                      input.closest('form').submit();
+                  });
+                  /* apre l'input file utilizzando lo span */
+                  $('.user-pic-container span').click(function(){
+                    input.trigger('click');
+                  });
+                </script>
+              <% end %>
+              <h5>012345678</h5>
+            </div>
+          </div>
+          <div class="info-profile col-xs-9">
+            <div class="row info">
+              <h2><%= @user.name %><i class="glyphicon glyphicon-cog"></i></h2>
+		          <h5>Data di nascita: <%= @user.birth_date ? @user.birth_date.strftime("%m/%d/%Y") : content_tag(:i, "sconosciuto") %> </h5>
+		          <h5>Professione: <%= @user.occupation ? @user.occupation : content_tag(:i, "sconosciuto") %> </h5>
+		          <h5>Genere preferito: <% if favourite_category = @user.favourite_category %>
+                                      <%= Category.find(favourite_category).name %>
+                                    <% else %>
+                                      <%= content_tag :i, "sconosciuto" %>
+                                    <% end %>
+              </h5>
+            </div>
+            <div class="row btn-profile">
+              <div class="col-xs-4 btn-col">
+	              <button type="button" class="btn">Segui</button>
+		          </div>
+	            <div class="col-xs-4 btn-col">
+		            <button type="button" class="btn">Racconti</button>
+	            </div>
+              <div class="col-xs-4 btn-col btn-contatta">
+	            	<button type="button" class="btn">Contatta</button>
+	            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="col-xs-12 col-md-4">
+        <%= render 'microposts/categories' %>
+      </aside>
+    </section>
+  </div>
+</div>
+
+
+        <!--<div id="profile" class="col-xs-12">
           <div class="col-xs-12">
             <div class="col-xs-5">
               <div class="user-pic-container pull-right">
@@ -55,11 +116,4 @@
 	          	<button type="button" class="btn">Contatta</button>
 	          </div>
           </div>
-        </div>
-      </div>
-      <aside class="col-xs-12 col-md-4">
-        <%= render 'microposts/categories' %>
-      </aside>
-    </section>
-  </div>
-</div>
+        </div>-->
