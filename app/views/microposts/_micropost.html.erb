@@ -3,11 +3,12 @@
     <div class="userinfo pull-left">
       <div class="avatar">
         <%= image_tag micropost.user.picture.thumb.url %>
+        <p class="text-center"><%= link_to micropost.user.name, micropost.user %></p>
       </div>
     </div>
     <div class="posttext pull-left">
       <h2>
-        <%= link_to micropost.title, micropost %> by <%= link_to micropost.user.name, micropost.user %>
+        <%= link_to micropost.title, micropost %>
       </h2>
       <p>
           <%= micropost.content %>
