@@ -34,8 +34,14 @@
           </div>
           <div class="info-profile col-xs-9">
             <div class="row info">
-              <h2><%= @user.name %><i class="glyphicon glyphicon-cog"></i></h2>
-		          <h5>Data di nascita: <%= @user.birth_date ? @user.birth_date.strftime("%m/%d/%Y") : content_tag(:i, "sconosciuto") %> </h5>
+              <h2><%= @user.name %>
+                <% if correct_user? %>
+                  <%= link_to edit_user_path(@user) do %>
+                    <i class="glyphicon glyphicon-cog"></i>
+                  <% end %>
+                <% end %>
+              </h2>
+		          <h5>Data di nascita: <%= @user.birth_date ? @user.birth_date.strftime("%d/%m/%Y") : content_tag(:i, "sconosciuto") %> </h5>
 		          <h5>Professione: <%= @user.occupation ? @user.occupation : content_tag(:i, "sconosciuto") %> </h5>
 		          <h5>Genere preferito: <% if favourite_category = @user.favourite_category %>
                                       <%= Category.find(favourite_category).name %>

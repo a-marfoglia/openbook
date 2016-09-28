@@ -17,6 +17,7 @@ gem 'mini_magick'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'faker',                '1.4.2'
+gem 'bootstrap-datepicker-rails'
 
 
 group :development, :test do

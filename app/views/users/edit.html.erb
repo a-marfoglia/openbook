@@ -1,0 +1,67 @@
+<% provide(:title,"Gestisci profilo") %>
+
+<div id="sfondo" class="container-fluid">
+  <div class="container no-xs-padding">
+    <%= render 'shared/forum_navbar' %>
+    <section id="f-section3" class="col-xs-12">
+      <div class="row">
+        <div class="col-md-8 tab-content">
+          <div role="tabpanel" class="tab-pane active" id="update-data">
+            <%= form_for(@user) do |f| %>
+              <%= render 'shared/error_messages', object: @user%>
+
+              <%= f.text_field :name, class: 'form-control', placeholder: "Nome" %>
+
+              <%= f.text_field :occupation, class: 'form-control', placeholder: "Occupazione" %>
+              <div class="input-group date">
+                <%= f.date_field :birth_date, class: 'form-control datepicker', placeholder: "Data di nascita"  %>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-th" ar></i></span>
+              </div>
+
+              <%= f.submit "Invia modifiche", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="update-password">
+            <%= form_for(@user) do |f| %>
+              <%= render 'shared/error_messages', object: @user%>
+
+                <%= f.password_field :password, class: 'form-control', placeholder: "Password attuale" %>
+
+                <%= f.password_field :new_password, class: 'form-control', placeholder: "Nuova password" %>
+
+                <%= f.password_field :new_password_confirmation, class: 'form-control', placeholder: "Conferma nuova password" %>
+
+              <%= f.submit "Invia modifiche", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#update-data" aria-controls="update-data" role="tab" data-toggle="tab">Modifica dati</a>
+            </li>
+            <li role="presentation">
+              <a href="#update-password" aria-controls="update-password" role="tab" data-toggle="tab">Modifica password</a>
+            </li>
+            <li><a href="#">Cancella account</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  $('a[data-toggle="tab"][href="#update-data"]').on('shown.bs.tab', function (e) {
+    $( document ).find('#update-password input[type="password"]').val('');
+  })
+
+  $(document).ready(function(){
+    $('.input-group.date').datepicker({
+      format: "dd/mm/yyyy",
+      language: "it",
+      autoclose: true,
+      todayHighlight: true
+    });
+  });
+</script>
