@@ -811,3 +811,52 @@ input {
     border-color:grey;
 
 }
+
+/***********************  profile-settings **************************/
+.profile-settings{
+  padding-left:200px;
+  padding-right:200px;
+  h2{
+    margin-top:0;
+    font-size:22px;
+  }
+  .sidebarblock{
+    .left-settings{
+        border-right: solid 1px #e0e0e0;
+        padding-top:30px;
+        padding-bottom:20px;
+        padding-left:65px;
+        padding-right:65px;
+        
+        input{
+          border-radius: 0px;
+          height: 38px!important;
+        }
+        .btn{
+          margin-top: 10px;
+        }
+    }
+    .right-settings{
+        padding-top:20px;
+        padding-left:0px;
+        padding-right:0px;
+    }
+  }
+  
+  @media only screen and (max-width: $screen-sm-max) {
+    padding-right:50px;
+    padding-left:50px;
+    .left-settings{
+      padding:20px;
+    }
+  }
+  
+  @media only screen and (max-width: $screen-xs-max) {
+    .sidebarblock{
+      .left-settings{
+        padding-right:15px;
+        padding-left:5px;
+      }
+    }
+  }
+}

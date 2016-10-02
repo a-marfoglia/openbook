@@ -3,22 +3,28 @@
 <div id="sfondo" class="container-fluid">
   <div class="container no-xs-padding">
     <%= render 'shared/forum_navbar' %>
-    <section id="f-section3" class="col-xs-12">
-      <div class="row">
-        <div class="col-md-8 tab-content">
+    <section id="f-section3" class="text-center profile-settings col-xs-12">
+      <h2>Impostazioni account</h2>
+      <div class="sidebarblock col-xs-12">
+        <div class="col-xs-8 tab-content left-settings">
           <div role="tabpanel" class="tab-pane active" id="update-data">
             <%= form_for(@user) do |f| %>
               <%= render 'shared/error_messages', object: @user%>
-
-              <%= f.text_field :name, class: 'form-control', placeholder: "Nome" %>
-
-              <%= f.text_field :occupation, class: 'form-control', placeholder: "Occupazione" %>
+              
+              <div class="input-group">
+                <%= f.text_field :name, class: 'form-control', placeholder: "Nome" %>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user" ar></i></span>
+              </div>
+              <div class="input-group">
+                <%= f.text_field :occupation, class: 'form-control', placeholder: "Occupazione" %>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase" ar></i></span>
+              </div>
               <div class="input-group date">
                 <%= f.date_field :birth_date, class: 'form-control datepicker', placeholder: "Data di nascita"  %>
                 <span class="input-group-addon"><i class="glyphicon glyphicon-th" ar></i></span>
               </div>
 
-              <%= f.submit "Invia modifiche", class: "btn btn-primary" %>
+              <%= f.submit "Invia modifiche", class: "btn" %>
             <% end %>
           </div>
           <div role="tabpanel" class="tab-pane" id="update-password">
@@ -31,12 +37,12 @@
 
                 <%= f.password_field :new_password_confirmation, class: 'form-control', placeholder: "Conferma nuova password" %>
 
-              <%= f.submit "Invia modifiche", class: "btn btn-primary" %>
+              <%= f.submit "Invia modifiche", class: "btn" %>
             <% end %>
           </div>
         </div>
-        <div class="col-md-4">
-          <ul class="nav nav-tabs" role="tablist">
+        <div class="col-xs-4 right-settings">
+          <ul class="nav" role="tablist">
             <li role="presentation" class="active">
               <a href="#update-data" aria-controls="update-data" role="tab" data-toggle="tab">Modifica dati</a>
             </li>
