@@ -2,8 +2,8 @@
 	<div class="userinfo pull-left">
 	  <div class="avatar">
 		  <%= image_tag comment.user.picture.thumb.url %>
+      <p class="text-center"><%= link_to comment.user.name, comment.user %></p>
 	  </div>
-    <p class="text-center"><%= link_to comment.user.name, comment.user %></p>
 	</div>
 	<div class="posttext pull-left">
 	  <p><%= comment.content %></p>
