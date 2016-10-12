@@ -299,6 +299,7 @@ input {
   .posttext {
     width: 85%;
     padding-right: 30px;
+    padding-left:20px;
     padding-top: 10px;
     padding-bottom: 5px;
 
@@ -501,10 +502,11 @@ input {
 
  input,.span{
 	  height:40px!important;
+	  border-radius: 0px;
   }
 
-  .col-xs-3{
-    padding-top:7px;
+  .dropdown{
+  padding-top:7px;
     a{
       font-size:15px;
       color:black;
@@ -514,6 +516,13 @@ input {
   .logo-button img{
     width: 50px;
     margin-top: 6px;
+  }
+  
+  .glyphicon-bell{
+    border:none;
+    background-color:inherit;
+    font-size: 23px;
+    padding-top: 6px;
   }
 
   @media only screen and (max-width: $screen-sm-max){
@@ -535,6 +544,10 @@ input {
 		  .col-xs-12 {
   		  margin-bottom:10px;
   	  }
+  	  
+  	  .write-btn .btn{
+        padding: 8px 15px;
+      }
 
   	  .cerca-paddding-left{
         padding-left:15px;
@@ -667,6 +680,10 @@ input {
     .info {
       padding-bottom: 10px;
       border-bottom:1px solid rgb(201, 204, 205);
+      .glyphicon-cog
+      {
+        color:#2F2F2F;
+      }
       h2{
         margin:0;
         margin-top: 18px;
@@ -759,7 +776,7 @@ input {
   }
 
   button{
-    margin-top:60px;
+    margin-top:55px;
     border:none;
     background-color:inherit;
   }
@@ -786,11 +803,11 @@ input {
   }
 }
 
-#lista-commenti{
+/*#lista-commenti{
   p{
     padding-top:4px;
   }
-}
+}*/
 
 /***********************  pagination **************************/
 
