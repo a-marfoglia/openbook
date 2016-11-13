@@ -31,12 +31,18 @@
             <%= form_for(@user) do |f| %>
               <%= render 'shared/error_messages', object: @user%>
 
+		<div class="input-group">
                 <%= f.password_field :password, class: 'form-control', placeholder: "Password attuale" %>
-
-                <%= f.password_field :new_password, class: 'form-control', placeholder: "Nuova password" %>
-
-                <%= f.password_field :new_password_confirmation, class: 'form-control', placeholder: "Conferma nuova password" %>
-
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ar></i></span>
+              </div>
+              <div class="input-group">
+                <%= f.password_field :new_password, class: 'form-control', placeholder: "Nuova passowrd" %>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ar></i></span>
+              </div>
+              <div class="input-group">
+                <%= f.password_field :new_password_confirmation, class: 'form-control', placeholder: "Conferma nuova password"  %>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-ok" ar></i></span>
+              </div>
               <%= f.submit "Invia modifiche", class: "btn" %>
             <% end %>
           </div>

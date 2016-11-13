@@ -41,10 +41,11 @@ body {
 }
 
 .btn{
-	  font-size: 14px;
+    font-size: 14px;
     color: white;
     border-radius: 0px;
     padding: 10px 15px;
+    height:40px;
     background-color: #2F2F2F;
   }
 .btn:hover{
@@ -264,6 +265,37 @@ input {
 
 #section4{
 	margin-top: 30px;
+        
+	.row-funzionamento
+	{
+		padding:0;
+		margin-top:30px;
+		margin-bottom:30px;
+		.color-funzionamento{
+			background-color:#2F2F2F;
+			height:410px;
+			padding:20px;
+			color:white;
+		}
+		.image-funzionamento{
+			background-position: center center;
+			background-size: cover;
+			height:410px;
+		}
+		
+		.fu1{background-image: url(image_path("cf1.png"));}
+		.fu2{background-image: url(image_path("cf2.png"));}
+		.fu3{background-image: url(image_path("cf3.png"));}
+		.step{
+		      	border:2px solid white;
+		      	border-radius:50%;
+			padding: 5px;
+			font-size: 18px;
+			float: left;
+			width: 40px;
+			font-weight: bold;
+		}
+	}
 }
 
 
@@ -500,9 +532,9 @@ input {
 	border-bottom: 1px solid rgb(201, 204, 205);
 	padding: 14px 100px 7px 100px;
 
- input,.span{
+ input,span{
 	  height:40px!important;
-	  border-radius: 0px;
+	  border-radius: 0px!important;
   }
 
   .dropdown{
@@ -563,10 +595,15 @@ input {
 /*************** ---- f-section3 ----- ****************/
 
 #f-section3{
-	background-color:#e9e9e9;
-	padding-top: 30px;
+   background-color:#e9e9e9;
+   padding-top: 30px;
+	
+   input,span{
+	  height:40px!important;
+	  border-radius: 0px!important;
+  }
 
-  #microposts-list, #topic{
+   #microposts-list, #topic{
     h2{
        color:#2F2F2F;
        margin:5px;
